@@ -96,6 +96,12 @@ video {
     text-decoration: none;
     cursor: pointer;
 }
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
@@ -103,18 +109,10 @@ video {
         width: 100%;
     }
 }
+
 </style>
 
 <body>
-
-
-<!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()"
-  class="w3-bar-item w3-button">Close</a>
-  <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
-</nav>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -123,20 +121,19 @@ video {
     <div class="w3-dropdown-hover w3-hide-small">
     <button class="w3-button" title="Notifications">crispy <i class="fa fa-caret-down"></i></button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-      <a href="file:///Applications/MAMP/htdocs/html/PhotographyPage" class="w3-bar-item w3-button">Photography</a>
-      <a href="#" class="w3-bar-item w3-button">Animation</a>
-      <a href="#" class="w3-bar-item w3-button">Artwork</a>
+      <a href="file:///Applications/MAMP/htdocs/html/PhotographyPage" class="w3-bar-item w3-button"style="background-color:#B7E0E2;">Photography</a>
+      <a href="/Applications/MAMP/htdocs/html/Animation" class="w3-bar-item w3-button"style="background-color:#82AAAF;">Animation</a>
     </div>
   </div>
   <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal" title="home"><i class="fa fa-home"></i></a>
  </div>
 
-
-  </div>
-</div>
-    <!-- Float links to the right. Hide them on small screens -->
-  </div>
-</div>
+  <!-- Navbar on small screens -->
+   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+     <a href="file:///Applications/MAMP/htdocs/html/PhotographyPage" class="w3-bar-item w3-button"style="background-color:#B7E0E2;">Photography</a>
+     <a href="Applications/MAMP/htdocs/html/Animation" class="w3-bar-item w3-button"style="background-color:#82AAAF;">Animation</a>
+   </div>
+ </div>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1564px;" id="home">
@@ -145,30 +142,41 @@ video {
   Your browser does not support the video tag.
 </video>
 <div class="w3-display-middle w3-margin-top w3-center">
-<img class="w3-image" src="pics/whitecrispylogo.png" alt="logo" width="187.5" height="100">
+<img class="w3-image" src="pics/whitecrispylogo.png" alt="logo" style="max-width:60%;height:auto;">
   </div>
 </header>
 <body>
 
 
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
+<footer><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-black" title="about">about</button></footer>
 
-<hr id="about">
-  <!-- About Section -->
-  <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-    <p style="font-family:arial;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-  </div>
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <div class="w3-container w3-padding-32">
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-red w3-display-topright"><i class="fa fa-remove"></i></span>
+      <h1>About</h1>
+    </header>
+    <div class="w3-container">
 
-    <div class="footer">
-      <div class="w3-bar w3-theme-d2 w3-left-align">
-      <p>Footer</p>
+      <p style="font-family:arial;">Christina O’Neill is a freelance multimedia/studio artist and photographer living in Greenwich, Connecticut.
+
+<p style="font-family:arial;">She is currently studying Digital Media and Design at the University of Connecticut and is expected to graduate spring 2018.</p>
+
+<p style="font-family:arial;">She has worked with the Connecticut Audubon Society producing and editing short videos.</p>
+
+<p style="font-family:arial;">Christina’s personal projects draw from nature with an emphasis on animals.</p>
+
+<p style="font-family:arial;">She is an aspirating animator/CG generalist with inspiration drawn from animal locomotion. In her free time Christina can be found horseback riding, birding, or exploring nature.
+</p>
+
     </div>
+    <footer class="w3-container"style="background-color:#0D2A2C;">
+      <p style="font-family:arial;"><i class="fa fa-phone"></i> (203)524-0388</p>
+      <p style="font-family:arial;"><i class="fa fa-envelope"></i> christina.o'neill@uconn.edu</p>
+    </footer>
   </div>
+</div>
 
 
 
@@ -181,6 +189,21 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
+// Close side navigation
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
 // Get the modal
 var modal = document.getElementById('myModal');
 
